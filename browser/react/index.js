@@ -12,7 +12,7 @@ import NewPlayList from './containers/PlayListContainer';
 
 ReactDOM.render(
   <Router history={hashHistory}>
-    <Route path='/' component={AppContainer} foo={'foo'}>
+    <Route path="/" component={AppContainer} foo={'foo'}>
       <Route path="/albums" component={Albums} />
       <Route path="/albums/:albumId" component={Album} />
       <Route path="/artists" component={FilterableArtistsContainer} />

@@ -7,7 +7,8 @@ class NewPlayList extends React.Component {
     constructor(props){
       super(props);
       this.state = {
-        inputValue: ''
+        inputValue: '',
+        modified: false
       };
 
       this.handleChange = this.handleChange.bind(this);
@@ -16,7 +17,8 @@ class NewPlayList extends React.Component {
 
     handleChange(event){
       this.setState({
-        inputValue: event.target.value
+        inputValue: event.target.value,
+        modified: true
       })
     }
 
@@ -24,13 +26,15 @@ class NewPlayList extends React.Component {
       event.preventDefault();
       console.log(this.state);
       this.setState({
-        inputValue: ''
+        inputValue: '',
+        modified: false
       })
     }
 
     render() {
       return (
-        <NewPlayListForm inputValue={this.state.inputValue} handleChange={this.handleChange} onFormSubmit={this.onFormSubmit}/>
+        <NewPlayListForm inputValue={this.state.inputValue}
+        modified={this.state.modified} handleChange={this.handleChange} onFormSubmit={this.onFormSubmit} />
       )
     }
 }
